@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Text Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .big-textfield {
+        width: 97%;
+        height: 350px;
+        resize: vertical;
+        padding-top: 8px;
+        line-height: 20px;
+        padding-left: 5px;
+      }
+
+      button:hover {
+        background: rgb(146, 216, 244);
+        border: solid 2px rgb(8, 8, 80);
+      }
+      button.active {
+        background: #3597e733;
+        color: #3c5ae3;
+      }
+      button{
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="grid grid-cols-1 bg-sky-400 mt-8 w-9/12 mx-auto">
+      <div>
+        <h1 class="my-3 text-3xl text-center font-bold">My Text Editor</h1>
+      </div>
+      <div
+        class="bg-blue-300 mx-auto w-9/12 border-solid border-2 border-black mb-8"
+      >
+        <div class="flex mb-2">
+          <div class="ml-3 mt-6 mr-20">
+            <button type="button" id="bold-button" onclick="f2(this)">
+              <i class="ml-3 me-3 fa-solid fa-bold"></i>
+            </button>
+            <button id="italic-button" onclick="f3(this)">
+              <i class="ml-3 me-3 fa-solid fa-italic"></i>
+            </button>
+            <button id="underline-button" onclick="f4(this)">
+              <i class="ml-3 me-3 fa-solid fa-underline"></i>
+            </button>
+          </div>
+          <div class="mt-6 mx-auto">
+            <button onclick="f5(this)" id="align-left-button">
+              <i class="ml-2 mr-2 fa-solid fa-align-left"></i>
+            </button>
+            <button onclick="f6(this)" id="align-center-button">
+              <i class="ml-2 mr-2 fa-solid fa-align-center"></i>
+            </button>
+            <button onclick="f7(this)" id="align-right-button">
+              <i class="ml-2 mr-2 fa-solid fa-align-right"></i>
+            </button>
+            <button onclick="f8(this)" id="align-justify-button">
+              <i class="ml-2 mr-2 fa-solid fa-align-justify"></i>
+            </button>
+          </div>
+          <div class="mt-6 ml-auto mr-4">
+            <input
+              type="number"
+              id="font-size-number"
+              name=""
+              id="font-size"
+              min="8"
+              max="50"
+              value="16"
+              class="pl-2 border-solid border-2 border-black w-11 font-semibold"
+              onchange="f1(this)"
+            />
+            <button
+              id="case-sensitivity"
+              type="button"
+              class="ml-4 font-semibold"
+              onclick="f9(this)"
+            >
+              aA
+            </button>
+            <input
+              class="ml-6 border-0"
+              type="color"
+              name=""
+              id="color-changer"
+              onchange="f10(this)"
+            />
+          </div>
+        </div>
+        <div>
+          <textarea
+            name=""
+            id="text-field"
+            cols="30"
+            rows="10"
+            class="big-textfield m-3 pe-6 border-solid border-2 border-black"
+            placeholder=" Enter your text here"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+    <script src="js/utilities.js"></script>
+    <script src="js/actions.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1ab56f09f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
